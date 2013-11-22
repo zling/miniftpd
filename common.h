@@ -29,6 +29,7 @@
 #include <string.h>
 #include <ctype.h>
 
+/*注意\后面不要有空格*/
 #define ERR_EXIT(m) \
   do \
   { \
