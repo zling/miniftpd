@@ -71,6 +71,7 @@ int tcp_server(const char *host, unsigned short port)
 	return listenfd;
 }
 
+/*需要修改 /etc/hosts-- 要不就换一种编程方式*/
 int getlocalip(char *ip)
 {
 	char host[100] = {0};
