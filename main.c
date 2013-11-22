@@ -73,6 +73,7 @@ int main(void)
 	
 
 	parseconf_load_file(MINIFTP_CONF);
+	/*必须放到LoadFile的后面---守候进程*/
 	daemon(0, 0);
 
 	printf("tunable_pasv_enable=%d\n", tunable_pasv_enable);
@@ -95,12 +96,14 @@ int main(void)
 		printf("tunable_listen_address=%s\n", tunable_listen_address);
 
 
+	/*必须用root用户启动，sudo ./miniftpd start*/
 	if (getuid() != 0)
 	{
 		fprintf(stderr, "miniftpd: must be started as root\n");
 		exit(EXIT_FAILURE);
 	}
 
+/*添加时候更新这段注释--防止初始化时候出错*/
 /*
 typedef struct session
 {
@@ -140,6 +143,7 @@ typedef struct session
 } session_t;
 */
 
+	/*初始化session，一个会话两个进程*/
 	session_t sess = 
 	{
 		/* 控制连接 */
