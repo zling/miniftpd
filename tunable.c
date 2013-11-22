@@ -1,5 +1,7 @@
 #include "tunable.h"
 
+/*配置文件中不配置，哪些配置项也是有默认值的修改在*/
+
 int tunable_pasv_enable = 1;
 int tunable_port_enable = 1;
 unsigned int tunable_listen_port = 21;
