@@ -1,6 +1,7 @@
 #ifndef _FTP_CODES_H_
 #define _FTP_CODES_H_
 
+/*响应ftp客户端时候用这些宏即可，ftp的响应是三位数字，第一位，第二位，第三位，分别代表不同的意思*/
 
 #define FTP_DATACONN          150
 
