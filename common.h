@@ -29,7 +29,7 @@
 #include <string.h>
 #include <ctype.h>
 
-/*注意\后面不要有空格*/
+/*注意\后面不要有空格-while后面也不需要分号*/
 #define ERR_EXIT(m) \
   do \
   { \
